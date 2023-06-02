@@ -1,0 +1,53 @@
+        /* *** feuille de styles CSS index - projet ohmyfood - Loïc M pour OpenClassRoom *** */
+    /* *** ROOT - Variable CSS *** */
+:root{
+	--styles_css-projet-ohmyfood-Loïc-M-pour-OpenClassRoom: #fe4164;
+}
+/* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */
+/* Styles CSS page de Login */
+.background-login{
+	background-color: #E5E5E5;
+}
+#connexion{
+	width: 50%;
+	margin: auto;
+}
+#connexion>*{
+	text-align: center;
+}
+#connexion h1{
+	margin-bottom: 20px;
+}
+#connexion h2{
+	margin-top: 150px;
+	margin-bottom: 37px;
+}
+#connexion form{
+	text-align: left;
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+}
+#connexion input{
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	margin-bottom: 30px;
+}
+#connexion label{
+	margin-bottom: 7px;
+}
+#login{	
+	margin-top: 7px;
+	margin-bottom: 28px;	
+}
+#reset-password{
+	margin-bottom: 355px;
+}
+.nav-footer{
+	display:flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	height: 60px;
+}
