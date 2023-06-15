@@ -1,12 +1,17 @@
-        /* *** feuille de styles CSS index - projet ohmyfood - Loïc M pour OpenClassRoom *** */
-    /* *** ROOT - Variable CSS *** */
+    /* *** feuille de styles CSS index - projet Portfolio architecte Sophie Bluel-master - Loïc M pour OpenClassRoom *** */
+/* *** ROOT - Variable CSS *** */
 :root{
-	--styles_css-projet-ohmyfood-Loïc-M-pour-OpenClassRoom: #fe4164;
+	--styles_css-projet-Portfolio-architecte-sophie-bluel-master-Loïc-M-pour-OpenClassRoom: #fe4164;
+	--pimary-color: #1D6154;
+	--secondary-color: #0E2F28;
+	--tertiary-color: #B1663C;
+	--background-color: #FFFEF8;
+	--shadow-color: rgba(0, 0, 0, 0.09);
 }
 /* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */
 /* Styles CSS page de Login */
 .background-login{
-	background-color: #E5E5E5;
+	background-color: var(--background-color);
 }
 #connexion{
 	width: 50%;
@@ -32,7 +37,7 @@
 	height: 50px;
 	font-size: 1.2em;
 	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	box-shadow: 0px 4px 14px var(--shadow-color);
 	margin-bottom: 30px;
 }
 #connexion label{
@@ -43,7 +48,7 @@
 	margin-bottom: 28px;	
 }
 #reset-password{
-	margin-bottom: 355px;
+	margin-bottom: 34.67%;
 }
 .nav-footer{
 	display:flex;

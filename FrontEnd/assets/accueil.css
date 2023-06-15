@@ -1,0 +1,27 @@
+
+:root{
+	--styles_css-projet-Portfolio-architecte-sophie-bluel-master-Loïc-M-pour-OpenClassRoom: #fe4164;
+	--pimary-color: #1D6154;
+	--secondary-color: #0E2F28;
+	--tertiary-color: #B1663C;
+	--background-color: #FFFEF8;
+    --color-filtre-font: #FFFFFF;
+	--shadow-color: rgba(0, 0, 0, 0.09);
+}
+
+#filters{
+    display: flex;
+    justify-content: center;
+}
+
+.filter-item{
+   color: var(--pimary-color);
+    border: 1px solid var(--pimary-color);
+    border-radius: 60px;
+    padding: 9px 25px;
+}
+
+.filter-item__selected{
+    background: var(--pimary-color);
+    color: var(--color-filtre-font);
+}

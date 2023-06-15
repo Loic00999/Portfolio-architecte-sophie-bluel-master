@@ -1,7 +1,12 @@
-    /* *** feuille de styles CSS index - projet ohmyfood - Loïc M pour OpenClassRoom *** */
+    /* *** feuille de styles CSS index - projet Portfolio architecte Sophie Bluel-master - Loïc M pour OpenClassRoom *** */
 /* *** ROOT - Variable CSS *** */
 :root{
-    --styles_css-projet-ohmyfood-Loïc-M-pour-OpenClassRoom: #fe4164;
+	--styles_css-projet-Portfolio-architecte-sophie-bluel-master-Loïc-M-pour-OpenClassRoom: #fe4164;
+	--pimary-color: #1D6154;
+	--secondary-color: #0E2F28;
+	--tertiary-color: #B1663C;
+	--background-color: #FFFEF8;
+	--shadow-color: rgba(0, 0, 0, 0.09);
 }
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -137,14 +142,15 @@ body {
 	margin: auto;
 	font-family: 'Work Sans';
 	font-size: 14px;
+	background-color: var(--background-color);
 }
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 50px 0;
 }
 section {
-	margin: 50px 0
+	margin: 50px 0;
 }
 h1 {
 	display: flex;
@@ -152,7 +158,7 @@ h1 {
 	font-family: 'Syne';
 	font-size: 22px;
 	font-weight: 800;
-	color: #B1663C
+	color: var(--tertiary-color);
 }
 h1>span {
 	font-family: 'Work Sans';
@@ -163,7 +169,7 @@ h2 {
 	font-family: 'Syne';
 	font-weight: 700;
 	font-size: 30px;
-	color: #1D6154
+	color: var(--pimary-color);
 }
 nav ul {
 	display: flex;
@@ -175,14 +181,14 @@ nav li {
 	font-size: 1.2em;
 }
 li:hover {
-	color: #B1663C;
+	color: var(--tertiary-color);
 }
 #introduction {
 	display: flex;
 	align-items: center;
 }
 #introduction figure {
-	flex: 1
+	flex: 1;
 }
 #introduction img {
 	display: block;
@@ -190,7 +196,7 @@ li:hover {
 	width: 80%;
 }
 #introduction article {
-	flex: 1
+	flex: 1;
 }
 #introduction h2 {
 	margin-bottom: 1em;
@@ -232,28 +238,34 @@ li:hover {
 	height: 50px;
 	font-size: 1.2em;
 	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	box-shadow: 0px 4px 14px var(--shadow-color);
 }
 #contact label {
 	margin: 2em 0 1em 0;
 }
 #contact textarea {
 	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	box-shadow: 0px 4px 14px var(--shadow-color);
 }
 input[type="submit"] {
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
-	background-color: #1D6154;
+	background-color: var(--pimary-color);
 	margin: 2em auto;
 	width: 179px;
 	height: 36px !important;
 	text-align: center;
 	border-radius: 60px;
 }
+#reset-password{
+	text-decoration: underline;
+}
+input[type="submit"]:hover{	
+	background-color: var(--secondary-color);	
+}
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
-	margin: 2em
+	margin: 2em;
 }

@@ -2,15 +2,17 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
-	<title>Sophie Bluel - Architecte d'intérieur</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
+	<link rel="stylesheet" href="./assets/accueil.css">
+	<script src="./assets/js/script.js" async></script>
+	<title>Sophie Bluel - Architecte d'intérieur</title>
 </head>
-<body>
+<body>	
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
@@ -36,7 +38,11 @@
 	</section>
 	<section id="portfolio">
 		<h2>Mes Projets</h2>
+		<div id="filters">
+			<div class="filter-item filter-item__selected" data-categorie="-1">Tous</div>
+		</div>		
 		<div class="gallery">
+			<!--
 			<figure>
 				<img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
 				<figcaption>Abajour Tahina</figcaption>
@@ -81,6 +87,7 @@
 				<img src="assets/images/hotel-first-arte-new-delhi.png" alt="Hotel First Arte - New Delhi">
 				<figcaption>Hotel First Arte - New Delhi</figcaption>
 			</figure>
+			-->
 		</div>
 	</section>
 	<section id="contact">
