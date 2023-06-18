@@ -9,9 +9,11 @@
 	--shadow-color: rgba(0, 0, 0, 0.09);
 }
 
-#filters{
+.filters{
     display: flex;
     justify-content: center;
+    margin-bottom: 51px;
+    gap: 10px;
 }
 
 .filter-item{
@@ -19,6 +21,10 @@
     border: 1px solid var(--pimary-color);
     border-radius: 60px;
     padding: 9px 25px;
+    font-family: 'Syne';
+    font-weight: 700;
+	font-size: 16px;
+	color: var(--pimary-color);
 }
 
 .filter-item__selected{

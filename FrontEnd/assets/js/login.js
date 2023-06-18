@@ -26,7 +26,6 @@ async function connexion(event) {
       }),
     });
 
-    
     const loginDecoded = await login.json();
     localStorage.setItem("token", loginDecoded.token);
     localStorage.setItem("userId", loginDecoded.userId);
