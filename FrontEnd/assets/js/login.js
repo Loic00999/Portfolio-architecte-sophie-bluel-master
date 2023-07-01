@@ -29,7 +29,7 @@ async function connexion(event) {
     const loginDecoded = await login.json();
     localStorage.setItem("token", loginDecoded.token);
     localStorage.setItem("userId", loginDecoded.userId);
-    //window.location.href = "../index.html";
+    window.location.href = "../index.html";
   }
   console.log(window.localStorage);
   console.log(localStorage.length);

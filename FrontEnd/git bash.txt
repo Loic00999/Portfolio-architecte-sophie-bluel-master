@@ -1,0 +1,2 @@
+cd D:\\Programmation\\web-projet-ocr\\projet06\\Portfolio-architecte-sophie-bluel-master\\Backend
+npm start

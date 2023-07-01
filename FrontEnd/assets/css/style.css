@@ -7,6 +7,7 @@
 	--tertiary-color: #B1663C;
 	--background-color: #FFFEF8;
 	--shadow-color: rgba(0, 0, 0, 0.09);
+	--font-color-contraste: #FFFFFF;
 }
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -137,10 +138,15 @@ table {
 	border-spacing: 0;
 }
 /** end reset css**/
-body {
+body{	/* dimension max du site */
+	max-width: 1440px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.body-container {	/* dimension contenu du site */
 	max-width: 1140px;
 	margin: auto;
-	font-family: 'Work Sans';
+	font-family: "Work Sans";
 	font-size: 14px;
 	background-color: var(--background-color);
 }
@@ -250,7 +256,7 @@ li:hover {
 input[type="submit"] {
 	font-family: 'Syne';
 	font-weight: 700;
-	color: white;
+	color: var(--font-color-contraste);
 	background-color: var(--pimary-color);
 	margin: 2em auto;
 	width: 179px;

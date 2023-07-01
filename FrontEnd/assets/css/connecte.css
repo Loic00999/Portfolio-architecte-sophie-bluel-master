@@ -1,0 +1,118 @@
+:root{
+	--styles_css-projet-Portfolio-architecte-sophie-bluel-master-Loïc-M-pour-OpenClassRoom: #fe4164;
+	--background-color-bandeau: #000000;
+    --font-color-button-publish: #000000;
+    --background-button-publish: #FFFFFF;
+    --font-color-contraste: #FFFFFF;
+}
+/***
+ * Style CSS des liens de la barre de navigation
+ */
+#link-projets>a,
+#link-contact>a,
+#link-logout>a{
+    text-decoration: none;
+    color: var(--font-color-button-publish);
+    font-family: 'Work Sans';
+    font-weight: 400;
+    font-size: 14px;
+ }
+/***
+ * Style CSS de la banière "Mode édition"
+ */
+.mode-edition{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 59px;
+    background-color: var(--background-color-bandeau);
+    gap: 10px;
+}
+/***
+ * Style CSS du contenue de la banière "Mode édition"
+ */
+.titre-mode-edition{
+    display: flex;
+    align-items: center;
+    color: var(--font-color-contraste);
+    font-family: 'Work Sans';
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+}
+.titre-mode-edition>img{
+    margin-right: 10px;
+}
+.bouton-publier{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 216px;
+    height: 38px;
+    border-radius: 19px;
+    background-color: var(--background-button-publish);
+    color: var(--font-color-button-publish);
+    font-family: 'Work Sans';
+    font-weight: bold;
+    font-size: 14px;   
+}
+/***
+ * Style CSS du bouton modifié de la photo de profil
+ */
+.modif-photo-profils{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    color: var(--font-color-button-publish);
+    font-family: 'Work Sans';
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+}
+/***
+ * Style CSS du bouton modifié du texte du profil
+ */
+.modif-texte-profils{
+    display: flex;
+    flex-direction: row;
+    align-items: center;    
+    margin-bottom: 36px;    
+    gap: 10px;
+    color: var(--font-color-button-publish);
+    font-family: 'Work Sans';
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+}
+#introduction>article{
+    margin-top: 17px;
+}
+.modif-texte-profils>img{
+    width: 18px !important;
+    margin-left: 0 !important;
+}
+/***
+ * Style CSS du bouton modifié mes projets
+ */
+#titre-projet{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.modif-projets{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 10px;
+    color: var(--font-color-button-publish);
+    font-family: 'Work Sans';
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+}
