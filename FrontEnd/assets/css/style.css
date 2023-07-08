@@ -142,6 +142,7 @@ body{	/* dimension max du site */
 	max-width: 1440px;
 	margin-left: auto;
 	margin-right: auto;
+	background-color: var(--background-color)
 }
 .body-container {	/* dimension contenu du site */
 	max-width: 1140px;
@@ -195,11 +196,12 @@ li:hover {
 }
 #introduction figure {
 	flex: 1;
+	margin-left: 8.33%;
 }
 #introduction img {
 	display: block;
-	margin: auto;
-	width: 80%;
+	/* margin: auto; */
+	max-width: 474px;
 }
 #introduction article {
 	flex: 1;
@@ -209,13 +211,27 @@ li:hover {
 }
 #introduction p {
 	margin-bottom: 0.5em;
+	max-width: 404px;
+}
+#portfolio{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 #portfolio h2 {
 	text-align: center;
-	margin-bottom: 1em;
+	/* margin-bottom: 1em; */
 }
+.mes-projets{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+	margin-bottom: 87px;
+	gap: 20px;
+ }
 .gallery {
-	width: 100%;
+	width: 83.33%;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-column-gap: 20px;

@@ -1,0 +1,224 @@
+    /* *** feuille de styles CSS index - projet Portfolio architecte Sophie Bluel-master - Loïc M pour OpenClassRoom *** */
+/* *** ROOT - Variable CSS *** */
+:root{
+	--styles_css-projet-Portfolio-architecte-sophie-bluel-master-Loïc-M-pour-OpenClassRoom: #fe4164;
+	--pimary-color: #1D6154;
+	--secondary-color: #0E2F28;
+	--tertiary-color: #B1663C;
+	--background-color: #FFFEF8;
+    --background-color-chargement: #E8F1F6;
+    --border-color: #FFFFFF;
+    --font-color-paragraphe: #000000;
+    --font-color-suppresion: #D65353;
+    --line-color: #B3B3B3;
+	--shadow-color: rgba(0, 0, 0, 0.09);
+}
+/* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */
+/***
+ * Style CSS éléments commun des modales + modale galerie photo
+ */
+ .modale{
+    display: flex;
+    flex-direction: column;    
+    background-color: var(--background-color);
+    border-radius: 10px;
+    border: solid 2px var(--border-color);
+    box-shadow: 0 0 0 3px #fe4164 !important;
+    width: 630px;
+    flex-shrink: 0;
+    padding: 26px;
+    margin-left: auto;
+	margin-right: auto;
+ }
+ .modale-galerie-photo{
+    height: 731px;
+ }
+ .modale-ajout-photo{
+    height: 670px;
+ }
+.modale-galerie-photo,
+.modale-ajout-photo{
+    align-items: center;
+}
+.navigation-modale-galerie-photo,
+.navigation-modale-ajout-photo{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 30px;
+}
+.navigation-modale-galerie-photo{
+    justify-content: right;
+}
+.navigation-modale-ajout-photo{
+    justify-content: space-between;
+}
+.navigation-modale-ajout-photo>img:first-of-type{
+    width: 21px;
+    height: 21px;
+}
+.navigation-modale-ajout-photo>img:last-of-type{
+    width: 24px;
+    height: 24px;
+}
+.modale-galerie-photo>p,
+.modale-ajout-photo>p{
+    color: var(--font-color-paragraphe);
+    font-family: 'Work Sans';
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: center;    
+}
+.modale-galerie-photo>p{
+    margin-bottom: 46px;
+}
+.modale-ajout-photo>p{
+    margin-bottom: 36px;
+}
+.visuel-galerie-photos{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 9px;
+    grid-row-gap: 15px;
+    width: 420px;
+    height: 433px;
+    padding-bottom: 46px;
+    border-bottom: 1px solid var(--line-color);
+    margin-bottom: 38px;
+}
+.thumbs{
+    width: 100%;
+    height: 102.57px;
+    object-fit: cover;
+}
+.position-icon{
+    position: relative;
+}
+.icon-trash{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background-image: url(../icons/trash.png);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    border-radius: 2px;
+    width: 17px;
+    height: 17px;
+}
+.icon-move{
+    position: absolute;
+    left: 32.8px;
+    top: 5px;
+    z-index: 2;
+    background-image: url(../icons/move.png);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    border-radius: 2px;
+    width: 17px;
+    height: 17px;
+}
+#ajout-modale-galerie-photo{
+    width: 237px;
+}
+.bouton-suppresion-galerie{
+    width: 230px;
+    height: 17px;
+    color: var(--font-color-suppresion);
+    font-family: Syne;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: center; 
+    margin-bottom: 71px;   
+}
+/***
+ * Style CSS modale ajout photo
+ */
+.container-chargement-photo{
+    width: 420px;
+    height: 169px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 3px;
+    background-color: var(--background-color-chargement);
+}
+.container-chargement-photo>img{
+    width: 58px;
+    height: 58px;
+    margin-top: 22px;
+}
+.bouton-ajouter-photo{
+    display: flex;
+    justify-content: center;
+    background-color: #CBD6DC;
+    margin-top: 15px;
+    width: 173px;
+    height: 36;
+    border-radius: 50px;
+}
+.bouton-ajouter-photo>span{
+    font-family: 'Work Sans';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0em;
+    color: #306685;
+}
+.container-chargement-photo>p{
+    margin-top: 7px;
+    font-family: 'Work Sans';
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #444444;
+}
+.formulaire-modale-ajout-photo{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 420px;
+    height: 222px;
+    margin-top: 30px;
+    border-bottom: solid 1px #B3B3B3;
+}
+.formulaire-modale-ajout-photo>label{
+    font-family: 'Work Sans';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #3D3D3D;
+}
+#titre,
+#categorie{
+    width: 420px;
+    height: 51px;
+    margin-top: 12px;
+    background-color: #FFFFFF;
+    border: none;
+    box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+}
+#titre{
+    margin-bottom: 21px;
+}
+#categorie{
+    margin-bottom: 53px;
+}
+#bouton-modale-ajout-photo{
+    width: 237px !important;
+    background-color: #A7A7A7;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0em;
+    color: #FFFFFF;
+}

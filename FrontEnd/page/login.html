@@ -14,43 +14,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="stylesheet" href="../assets/css/connecte.css">
     <script src="../assets/js/login.js" async></script>
     <title>Sophie Bluel - Architecte d'intérieur - Login</title>
 </head>
-    <body class="background-login">
-        <header>
-            <div class="header">
+    <body>
+        <div class="body-container">
+            <header>
                 <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
                 <nav>
+                  <ul>
+                    <li id="link-projets"><a class="link-projets" href ="../index.html#portfolio">projets</a></li>
+                    <li id="link-contact"><a class="link-contact" href ="../index.html#contact">contact</a></li>
+                    <li id="link-logout" ><a class="link-login" href ="../page/login.html">login</a></li>
+                    <li id="link-instagram"><img src="../assets/icons/instagram.png" alt="Instagram"/></li>
+                  </ul>
+                </nav>
+              </header>
+            <main>
+                <div id="connexion">
+                    <h2>Log In</h2>
+                    <form action="" method="post">
+                        <label for="email">E-mail sophie.bluel@test.tld</label>
+                        <input type="email" name="email" id="email" required>
+                        <label for="password">Mot de passe S0phie</label>
+                        <input type="password" name="password" id="password" required>
+                        <input type="submit" value="Se connecter" id="login">
+                        <p id="login-fail"></p>
+                    </form>
+                    <p id="reset-password">Mot de passe oublié</p> 
+                </div>
+            </main>
+            <footer>
+                <nav class="nav-footer">
                     <ul>
-                        <li>projets</li>
-                        <li>contact</li>
-                        <li>login</li>
-                        <li><img src="../assets/icons/instagram.png" alt="Instagram"></li>
+                        <li>Mentions Légales</li>
                     </ul>
                 </nav>
-            </div>
-        </header>
-        <main>
-            <div id="connexion">
-                <h2>Log In</h2>
-                <form action="" method="post">
-                    <label for="email">E-mail sophie.bluel@test.tld</label>
-                    <input type="email" name="email" id="email" required>
-                    <label for="password">Mot de passe S0phie</label>
-                    <input type="password" name="password" id="password" required>
-                    <input type="submit" value="Se connecter" id="login">
-                    <p id="login-fail"></p>
-                </form>
-                <p id="reset-password">Mot de passe oublié</p> 
-            </div>
-        </main>
-        <footer>
-            <nav class="nav-footer">
-                <ul>
-                    <li>Mentions Légales</li>
-                </ul>
-            </nav>
-        </footer>
+            </footer>
+        </div>
     </body>
 </html>

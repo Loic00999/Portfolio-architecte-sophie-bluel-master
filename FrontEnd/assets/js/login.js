@@ -35,7 +35,13 @@ async function connexion(event) {
   console.log(localStorage.length);
 }
 login.addEventListener("click", connexion);
-
+/**
+ * Lien extérieur vers le compte Instagram
+ */
+const linkInstagram = document.querySelector("#link-instagram");
+linkInstagram.addEventListener('click', function () {
+  window.location.href = "https://www.instagram.com/openclassrooms/";
+});
 /**
  * localStorage méthodes et propriétés.
  *

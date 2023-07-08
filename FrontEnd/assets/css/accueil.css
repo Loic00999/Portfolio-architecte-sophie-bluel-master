@@ -1,4 +1,5 @@
-
+    /* *** feuille de styles CSS index - projet Portfolio architecte Sophie Bluel-master - Loïc M pour OpenClassRoom *** */
+/* *** ROOT - Variable CSS *** */
 :root{
 	--styles_css-projet-Portfolio-architecte-sophie-bluel-master-Loïc-M-pour-OpenClassRoom: #fe4164;
 	--pimary-color: #1D6154;
@@ -8,6 +9,7 @@
     --color-filtre-font: #FFFFFF;
 	--shadow-color: rgba(0, 0, 0, 0.09);
 }
+/* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */
 /***
  * Style CSS des boutons filtres
  */

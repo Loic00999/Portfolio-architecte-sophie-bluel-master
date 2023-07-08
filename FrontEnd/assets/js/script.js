@@ -1,5 +1,5 @@
 /***
- * Script JavaScript
+ * Script JavaScript projet Portfolio architecte sophie bluel master Loïc M pour OpenClassRoom
  */
 /***
  * Constantes des routes vers API
@@ -7,10 +7,13 @@
 const urlWorks = "http://localhost:5678/api/works";
 const urlCategories = "http://localhost:5678/api/categories";
 /***
- * Constante du token
+ * Function contrôle du token
  */
-const controleToken = localStorage.getItem("token");
-console.log(controleToken);
+function isConnected(){
+  const controleToken = localStorage.getItem("token");
+  console.log(controleToken);
+  return controleToken;
+}
 /***
  * Function création HTML de la banière "Mode édition"
  */
@@ -42,30 +45,27 @@ function createModeEdition(){
   divboutonPublier.appendChild(spanboutonPublier);
 }
 /***
- * Function login vers logout
+ * Function transformer login en logout
  */
-const logOut = document.querySelector("#link-logout");
-logOut.addEventListener('click', function () {
-  localStorage.removeItem("token");
-});
+function logOut(){
+  const logOut = document.querySelector("#link-logout"); //mettre dans une fonction
+  logOut.addEventListener('click', function () {
+    localStorage.removeItem("token");
+    location.reload();
+  });
+}
 /***
  * Function vérification de la présence du token pour activer le mode edition
  */
 function modeEditionActif(){
-  if (controleToken) {
+  if (isConnected()) {
     createModeEdition();
     logOut.innerText = "Logout";
   }
 }
-modeEditionActif();
-
-
 /**
- *  works in progress ////////////////////////////////////////////////////////////////////////////////
+ * Function récupération des catégories filtre
  */
-
-/***récupération des catégories filtre***/
-
 function recuperationCategories() {
   return fetch(urlCategories)
     .then((categories) => categories.json())
@@ -74,8 +74,9 @@ function recuperationCategories() {
     });
 }
 console.log(recuperationCategories());
-/***ajouter les boutons filtres ***/
-
+/**
+ * Function ajouter les boutons filtres
+ */
 function affichageFiltres() {
   recuperationCategories().then((categories) => {
     for (let indexCategorie in categories) {
@@ -87,21 +88,19 @@ function affichageFiltres() {
       divFiltreParent.appendChild(filterDiv);
     }
     const filterItem = Array.from(document.querySelectorAll(".filter-item"));
-
     for (let filter of filterItem) {
       console.log(filter);
-      filter.addEventListener("click", (event) => {
+      filter.addEventListener("click", async (event) => {
         
         const idCategorie = event.target.dataset.categorie;
-        affichageProjet(idCategorie);
+        await filtrerProjets(idCategorie);
       });
     }
   });
 }
-affichageFiltres();
-
-/***ajouter les images ***/
-
+/**
+ * Function récupération des données de projet 
+ */
 function recuperationProjet() {
   return fetch(urlWorks)
     .then((reponse) => reponse.json())
@@ -109,32 +108,98 @@ function recuperationProjet() {
       return worksContent;
     });
 }
-recuperationProjet();
-
+/**
+ * Function créer la gallerie de projet
+ */
 function affichageProjet(id = -1) {
   const gallery = document.querySelector(".gallery");
   recuperationProjet().then((worksContent) => {
     gallery.innerHTML = null;
-    let filterWorks = [];
-    if (id == -1) {
-      filterWorks = worksContent;
-    } else {
-      filterWorks = worksContent.filter((work) => work.categoryId == id);
-    }
-    for (indexWorks in filterWorks) {
-      const cartel = document.createElement("figure");
-      const imgCartel = document.createElement("img");
-      const titleCartel = document.createElement("figcaption");
-
-      cartel.setAttribute("id", worksContent[indexWorks].category.name);
-      imgCartel.src = worksContent[indexWorks].imageUrl;
-      titleCartel.innerHTML = worksContent[indexWorks].title;
- 
-      gallery.appendChild(cartel);
-      cartel.appendChild(imgCartel);
-      cartel.appendChild(titleCartel);
-
-    }
+    creationElementProjet(worksContent);
   });
 }
-affichageProjet();
+/**
+ * Création élément projets
+ */
+function creationElementProjet(works){
+  const gallery = document.querySelector(".gallery");
+  for (indexWorks in works) {
+    const cartel = document.createElement("figure");
+    const imgCartel = document.createElement("img");
+    const titleCartel = document.createElement("figcaption");
+
+    cartel.setAttribute("id", works[indexWorks].category.name);
+    imgCartel.src = works[indexWorks].imageUrl;
+    titleCartel.innerHTML = works[indexWorks].title;
+
+    gallery.appendChild(cartel);
+    cartel.appendChild(imgCartel);
+    cartel.appendChild(titleCartel);    
+  }  
+}
+/**
+ * Filtrer projets
+ */
+async function filtrerProjets(id=-1){
+  let works = await recuperationProjet();
+  let filterWorks = works;  
+  if (id != -1) {
+    filterWorks = works.filter((work) => work.categoryId == id);
+  }
+  const gallery = document.querySelector(".gallery");
+  gallery.innerHTML = null;
+  creationElementProjet(filterWorks);
+}
+/***
+ * Modales galerie photo
+ */
+function creationElementProjetModale(works){
+  const galleryThumbs = document.querySelector("#projet-modale-galerie-photo");
+  for (indexWorks in works) {
+    const cartelThumbs = document.createElement("figure");
+    const imgCartelThumbs = document.createElement("img");
+    const titleCartelThumbs = document.createElement("figcaption");
+    const trashThumbs = document.createElement("div");
+
+    cartelThumbs.setAttribute("id", works[indexWorks].category.name);
+    cartelThumbs.classList.add("position-icon");
+    imgCartelThumbs.src = works[indexWorks].imageUrl;
+    imgCartelThumbs.classList.add("thumbs");
+    titleCartelThumbs.innerHTML = "éditer";
+    trashThumbs.classList.add("icon-trash");
+    
+    galleryThumbs.appendChild(cartelThumbs);
+    cartelThumbs.appendChild(trashThumbs);
+    cartelThumbs.appendChild(imgCartelThumbs);
+    cartelThumbs.appendChild(titleCartelThumbs);
+  }
+  const moveThumbs = document.createElement("div");
+  moveThumbs.classList.add("icon-move");
+  galleryThumbs.appendChild(moveThumbs);
+}
+/**
+ * Function créer la gallerie de projet de la modale
+ */
+function affichageProjetModale(id = -1) {
+  const galleryThumb = document.querySelector("#projet-modale-galerie-photo");
+  recuperationProjet().then((worksContent) => {
+    galleryThumb.innerHTML = null;
+    creationElementProjetModale(worksContent);
+  });
+}
+affichageProjetModale(id = -1);
+/**
+ * Lien extérieur vers le compte Instagram
+ */
+const linkInstagram = document.querySelector("#link-instagram"); //mettre dans une fonction
+linkInstagram.addEventListener('click', function () {
+  window.location.href = "https://www.instagram.com/openclassrooms/";
+});
+/**
+ *  function main (initialise le projet)
+ */
+(function main(){
+  modeEditionActif();
+  affichageFiltres();
+  affichageProjet();
+})()

@@ -10,9 +10,6 @@
 }
 /* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */
 /* Styles CSS page de Login */
-.background-login{
-	background-color: var(--background-color);
-}
 #connexion{
 	width: 50%;
 	margin: auto;
