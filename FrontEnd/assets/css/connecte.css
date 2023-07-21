@@ -7,10 +7,7 @@
     --background-button-publish: #FFFFFF;
     --font-color-contraste: #FFFFFF;
 }
-/* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */
-/***
- * Style CSS des liens de la barre de navigation
- */
+/*Style CSS des liens de la barre de navigation*/
 #link-projets>a,
 #link-contact>a,
 #link-logout>a{
@@ -28,15 +25,15 @@
     color: var(--font-color-button-publish);
     font-family: 'Work Sans';
     font-weight: 400;
-    font-size: 14px;    
+    font-size: 14px;
+    cursor: pointer;    
  }
 #link-instagram>img{
     width: 22px;
     height: 22px;
+    cursor: pointer;
 }
-/***
- * Style CSS de la banière "Mode édition"
- */
+/*Style CSS de la banière "Mode édition"*/
 .mode-edition{
     display: flex;
     flex-direction: row;
@@ -47,9 +44,7 @@
     background-color: var(--background-color-bandeau);
     gap: 10px;
 }
-/***
- * Style CSS du contenue de la banière "Mode édition"
- */
+/*Style CSS du contenue de la banière "Mode édition"*/
 .titre-mode-edition{
     display: flex;
     align-items: center;
@@ -73,12 +68,11 @@
     color: var(--font-color-button-publish);
     font-family: 'Work Sans';
     font-weight: bold;
-    font-size: 14px;   
+    font-size: 14px;
+    cursor: pointer;   
 }
-/***
- * Style CSS des bouton modifier
- */
-.bouton-mofifier{
+/*Style CSS des bouton modifier*/
+.bouton-modifier{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -90,22 +84,17 @@
     font-weight: 400;
     font-size: 14px;
     text-align: center;
+    cursor: pointer;
 }
 .bouton-mofifier>img{
     width: 18px !important;
 }
-/***
- * Style CSS du bouton modifié de la photo de profil
- */
-.modification-photo-profils{
-    display: inline-flex;
+/*Style CSS du bouton modifié de la photo de profil*/
+#bouton-modification-photo-profils{
     margin-top: 15px;
 }
-/***
- * Style CSS du bouton modifié du texte du profil
- */
-.modification-texte-profils{
-    display: inline-flex;
+/*Style CSS du bouton modifié du texte du profil*/
+#bouton-modification-texte-profils{
     position: absolute;
     top: -45px;
     left: 0;
@@ -114,9 +103,11 @@
     position: relative;
     margin-left: 24px;
 }
-/***
- * Style CSS du bouton modifié mes projets
- */
- .modification-projets{
-    display: inline-flex;
+/*Style CSS du bouton modifié mes projets*/
+.boutons-non-connecte{
+    display: none;
 }
+/*Style CSS affichage des boutons quand connecté*/
+.boutons-connecte{
+    display: inline-flex;
+ }

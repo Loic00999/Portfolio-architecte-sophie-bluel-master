@@ -1,16 +1,13 @@
-    /* *** feuille de styles CSS index - projet Portfolio architecte Sophie Bluel-master - Loïc M pour OpenClassRoom *** */
+    /* *** feuille de styles CSS page de Login - projet Portfolio architecte Sophie Bluel-master - Loïc M pour OpenClassRoom *** */
 /* *** ROOT - Variable CSS *** */
 :root{
 	--styles_css-projet-Portfolio-architecte-sophie-bluel-master-Loïc-M-pour-OpenClassRoom: #fe4164;
-	--pimary-color: #1D6154;
-	--secondary-color: #0E2F28;
-	--tertiary-color: #B1663C;
-	--background-color: #FFFEF8;
-	--shadow-color: rgba(0, 0, 0, 0.09);
+	--login-primary-color: #fe4164;
+	--login-secondary-color: rgba(0, 0, 0, 0.09);
 }
-/* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */
-/* Styles CSS page de Login */
 #connexion{
+	display: flex;
+	flex-direction: column;
 	width: 50%;
 	margin: auto;
 }
@@ -34,7 +31,7 @@
 	height: 50px;
 	font-size: 1.2em;
 	border: none;
-	box-shadow: 0px 4px 14px var(--shadow-color);
+	box-shadow: 0px 4px 14px var(--secondary-color);
 	margin-bottom: 30px;
 }
 #connexion label{
@@ -44,8 +41,18 @@
 	margin-top: 7px;
 	margin-bottom: 28px;	
 }
+#connection-error{
+	color: var(--login-primary-color);
+	font-family: 'Work Sans';
+	font-size: 18px;
+	font-weight: bolder;
+	line-height: 16px;
+	letter-spacing: 0em;
+	text-align: center;
+	margin-bottom: 8px;
+}
 #reset-password{
-	margin-bottom: 34.67%;
+	margin-bottom: 30%;
 }
 .nav-footer{
 	display:flex;

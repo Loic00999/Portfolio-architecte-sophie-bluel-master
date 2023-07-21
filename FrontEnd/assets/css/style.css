@@ -279,6 +279,7 @@ input[type="submit"] {
 	height: 36px !important;
 	text-align: center;
 	border-radius: 60px;
+	cursor: pointer;
 }
 #reset-password{
 	text-decoration: underline;

@@ -34,14 +34,14 @@
             <main>
                 <div id="connexion">
                     <h2>Log In</h2>
-                    <form action="" method="post">
-                        <label for="email">E-mail sophie.bluel@test.tld</label>
-                        <input type="email" name="email" id="email" required>
-                        <label for="password">Mot de passe S0phie</label>
-                        <input type="password" name="password" id="password" required>
-                        <input type="submit" value="Se connecter" id="login">
-                        <p id="login-fail"></p>
+                    <form action="POST" method="post" name="identifier">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="emailUser" id="email" required>
+                        <label for="password">Mot de passe</label>
+                        <input type="password" name="passwordUser" id="password" required>
+                        <input type="submit" value="Se connecter" id="login">                        
                     </form>
+                    <p id="connection-error"></p>
                     <p id="reset-password">Mot de passe oublié</p> 
                 </div>
             </main>

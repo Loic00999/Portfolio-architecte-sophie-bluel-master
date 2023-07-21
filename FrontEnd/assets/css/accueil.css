@@ -9,12 +9,15 @@
     --color-filtre-font: #FFFFFF;
 	--shadow-color: rgba(0, 0, 0, 0.09);
 }
-/* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */
-/***
- * Style CSS des boutons filtres
- */
-.filters{
+/*Style CSS des boutons filtres*/
+.filtres-active{
     display: flex;
+ }
+.filtres-non-active{
+    display: none;
+    visibility: hidden;
+}
+.filters{    
     justify-content: center;
     margin-bottom: 51px;
     gap: 10px;
@@ -29,10 +32,18 @@
 	font-size: 16px;
 	color: var(--pimary-color);
 }
-/***
- * Style CSS de bouton filtre selectionné
- */
+/*Style CSS de bouton filtre selectionné*/
 .filter-item__selected{
     background: var(--pimary-color);
     color: var(--color-filtre-font);
+}
+/*Style CSS option du sélecteur de la modale ajout photo*/
+.option-categorie{
+    font-family: Work Sans;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #444444;
 }

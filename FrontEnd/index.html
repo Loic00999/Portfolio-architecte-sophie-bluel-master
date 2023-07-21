@@ -15,10 +15,8 @@
     <title>Sophie Bluel - Architecte d'intérieur</title>
   </head>
   <body>
-    <!--* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *-->
-    <div id="mode-edition"><!--banière mode connecté--></div>
-    <!--* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *-->
-    <div class="body-container"><!-- Gestion media query -->
+    <div id="mode-edition"><!--baniere mode connecte--></div>
+    <div id="body-background" class="body-container"><!--gestion media query-->
       <header>
         <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
         <nav>
@@ -34,15 +32,13 @@
         <section id="introduction">
           <figure>
             <img src="./assets/images/sophie-bluel.png" alt="Phot de profil de Sophie Bluel" />
-            <!--* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *-->
-            <div class="modification-photo-profils bouton-mofifier"><!--bouton modifier photo profil-->
+            <div id="bouton-modification-photo-profils" class="bouton-modifier boutons-non-connecte"><!--bouton modifier photo profil-->
               <img src="./assets/icons/modifier.png" alt="Icon modifier"/>
               <span>modifier</span>
             </div>
           </figure>
           <article>
-            <!--* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *-->
-            <div class="modification-texte-profils bouton-mofifier"><!--bouton modifier texte du profil-->
+            <div id="bouton-modification-texte-profils" class="bouton-modifier boutons-non-connecte"><!--bouton modifier texte du profil-->
               <img src="./assets/icons/modifier.png" alt="Icon modifier"/>
               <span>modifier</span>
             </div>
@@ -52,60 +48,61 @@
             <p> En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
           </article>
         </section>
-        <!--* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *-->
-          <div class="modale modale-galerie-photo"><!-- Emplacement de la modale "galerie photo" -->
+        <div id="modal-container" class="overlay-off"><!--container des modal-->
+          <div id="overlay" class="modal-overlay overlay-off"></div><!--overlay des modal-->
+          <div id="modale-gestion-galerie-photo" class="modale modale-gestion-galerie-photo modales-non-active"><!--modale galerie photo-->
             <div class="navigation-modale-galerie-photo">
-              <img src="./assets/icons/xmark.png" alt="croix fermeture">
+              <img id="fermeture-modale-gestion-galerie" src="./assets/icons/xmark.png" alt="croix fermeture">
             </div>
             <p>Galerie photo</p>
             <div id="projet-modale-galerie-photo" class="visuel-galerie-photos"></div>
             <form action="" method="post">
-              <input type="submit" value="Ajouter une photo" id="ajout-modale-galerie-photo">
+              <input type="submit" value="Ajouter une photo" id="bouton-appel-modale-ajout-photo">
             </form>
             <div class="bouton-suppresion-galerie">
               <span>Supprimer la galerie</span>
             </div>
-          </div>
-          <!--* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *-->
-          <div class="modale modale-ajout-photo"><!-- Emplacement de la modale "Ajout photo" -->
+          </div><!--fin de la modale galerie photo-->
+          <div id="modale-gestion-ajout-photo" class="modale modale-gestion-ajout-photo modales-non-active"><!--modale Ajout photo-->
             <div class="navigation-modale-ajout-photo">
-              <img src="./assets/icons/arrow-left.png" alt="fleche retour">
-              <img src="./assets/icons/xmark.png" alt="croix fermeture">
+              <img id="retour-modale-gestion-gallerie" src="./assets/icons/arrow-left.png" alt="fleche retour">
+              <img id="fermeture-modale-ajout-photo" src="./assets/icons/xmark.png" alt="croix fermeture">
             </div>
             <p>Ajout photo</p>
             <div class="container-chargement-photo">
-              <img src="./assets/icons/picture.png" alt="icon photo">
-              <div class="bouton-ajouter-photo">
-                <span>+ Ajouter photo</span>
+              <img id="container-chargement-photo-img" class="container-chargement-photo-img" src="./assets/icons/picture.png" alt="icon photo">
+              <div id="bouton-ajouter-photo" class="bouton-ajouter-photo">
+                <label for="chargement-image">+ Ajouter une photo</label>
+                <input type="file" name="chargement-image" id="chargement-image" accept="image/*">
               </div>
-              <p>jpg, png : 4mo max</p>
+              <p id="container-chargement-photo-text" class="container-chargement-photo-text">jpg, png : 4mo max</p>
+              <img id="preview-thumb" class="preview-thumb-no-active" src="" alt="thumb">
             </div>
             <div class="formulaire-modale-ajout-photo">
-              <form action="#" method="post">
+              <form id="form" action="#" method="post">
                 <label for="titre">Titre</label>
-                <input type="text" name="titre" id="titre">
+                <input type="text" name="titre" id="titre" required>
                 <label for="categorie">Catégorie</label>
-                <select name="categorie" id="categorie"></select>
+                <select name="categorie" id="categorie" required>
+                  <option value=""></option>
+                </select>
               </form>              
             </div>
             <input id="bouton-modale-ajout-photo" type="submit" value="Valider"/>
-          </div>
-        <!--* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *-->
+          </div><!--fin de la modale Ajout photo-->
+        </div>
         <section id="portfolio">
           <div class="mes-projets">
             <h2>Mes Projets</h2>
-            <!--* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *-->
-            <div class="modification-projets bouton-mofifier"><!--bouton modifier projets-->
+            <div id="bouton-modification-projets" class="bouton-modifier boutons-non-connecte"><!--bouton modifier projets-->
               <img src="./assets/icons/modifier.png" alt="Icon modifier"/>
               <span>modifier</span>				
             </div>
           </div>
-          <!--* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *-->
-          <div class="filters"><!-- Filtres des projets -->
-            <div class="filter-item filter-item__selected" data-categorie="-1">Tous</div>
+          <div id="filtres-visibilite" class="filters filtres-active"><!--filtres des projets-->
+            <div id="filtre-tous" class="filter-item filter-item__selected" data-categorie="-1">Tous</div>
           </div>
-          <!--* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *-->
-          <div class="gallery"><!-- Emplacement de la galerie des projets --></div>
+          <div class="gallery"><!--emplacement de la galerie des projets--></div>
         </section>
         <section id="contact">
           <h2>Contact</h2>

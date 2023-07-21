@@ -6,49 +6,82 @@
 	--secondary-color: #0E2F28;
 	--tertiary-color: #B1663C;
 	--background-color: #FFFEF8;
+    --background-color-modales: #FFFFFF;
     --background-color-chargement: #E8F1F6;
-    --border-color: #FFFFFF;
     --font-color-paragraphe: #000000;
     --font-color-suppresion: #D65353;
     --line-color: #B3B3B3;
 	--shadow-color: rgba(0, 0, 0, 0.09);
 }
-/* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */
-/***
- * Style CSS éléments commun des modales + modale galerie photo
- */
- .modale{
-    display: flex;
+/*Style CSS éléments commun des modales + modale galerie photo*/
+#modal-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}  
+.modal-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;  
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+.overlay-off{
+    display: none;
+}
+.overlay-On{
+    visibility: visible;
+}
+#modale-gestion-galerie-photo,
+#modale-gestion-ajout-photo{
+    position: fixed;
+	top: 95px;
+	left: 28.82%;
+    z-index: 10;
+}
+.modale{
     flex-direction: column;    
-    background-color: var(--background-color);
+    background-color: var(--background-color-modales);
     border-radius: 10px;
-    border: solid 2px var(--border-color);
-    box-shadow: 0 0 0 3px #fe4164 !important;
     width: 630px;
     flex-shrink: 0;
-    padding: 26px;
-    margin-left: auto;
-	margin-right: auto;
- }
- .modale-galerie-photo{
+    padding: 26px;;
+}
+.modales-non-active{
+    display: none !important;
+    visibility: hidden !important;
+}
+.modales-active{
+    display: flex !important;
+    visibility: visible !important;
+}
+.modale-gestion-galerie-photo{
     height: 731px;
  }
- .modale-ajout-photo{
+.modale-gestion-ajout-photo{
     height: 670px;
- }
-.modale-galerie-photo,
-.modale-ajout-photo{
+}
+.modale-gestion-galerie-photo,
+.modale-gestion-ajout-photo{
     align-items: center;
 }
 .navigation-modale-galerie-photo,
 .navigation-modale-ajout-photo{
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 100%;    
     height: 30px;
 }
 .navigation-modale-galerie-photo{
     justify-content: right;
+}
+.navigation-modale-galerie-photo>img{
+    cursor: pointer;
 }
 .navigation-modale-ajout-photo{
     justify-content: space-between;
@@ -56,13 +89,15 @@
 .navigation-modale-ajout-photo>img:first-of-type{
     width: 21px;
     height: 21px;
+    cursor: pointer;
 }
 .navigation-modale-ajout-photo>img:last-of-type{
     width: 24px;
     height: 24px;
+    cursor: pointer;
 }
-.modale-galerie-photo>p,
-.modale-ajout-photo>p{
+.modale-gestion-galerie-photo>p,
+.modale-gestion-ajout-photo>p{
     color: var(--font-color-paragraphe);
     font-family: 'Work Sans';
     font-size: 26px;
@@ -71,10 +106,10 @@
     letter-spacing: 0em;
     text-align: center;    
 }
-.modale-galerie-photo>p{
+.modale-gestion-galerie-photo>p{
     margin-bottom: 46px;
 }
-.modale-ajout-photo>p{
+.modale-gestion-ajout-photo>p{
     margin-bottom: 36px;
 }
 .visuel-galerie-photos{
@@ -88,6 +123,7 @@
     padding-bottom: 46px;
     border-bottom: 1px solid var(--line-color);
     margin-bottom: 38px;
+    overflow-y: auto;
 }
 .thumbs{
     width: 100%;
@@ -108,6 +144,7 @@
     border-radius: 2px;
     width: 17px;
     height: 17px;
+    cursor: pointer;
 }
 .icon-move{
     position: absolute;
@@ -121,6 +158,7 @@
     border-radius: 2px;
     width: 17px;
     height: 17px;
+    cursor: pointer;
 }
 #ajout-modale-galerie-photo{
     width: 237px;
@@ -135,12 +173,12 @@
     line-height: 17px;
     letter-spacing: 0em;
     text-align: center; 
-    margin-bottom: 71px;   
+    margin-bottom: 71px;
+    cursor: pointer;   
 }
-/***
- * Style CSS modale ajout photo
- */
+/*Style CSS modale ajout photo*/
 .container-chargement-photo{
+    position: relative;
     width: 420px;
     height: 169px;
     display: flex;
@@ -149,7 +187,8 @@
     border-radius: 3px;
     background-color: var(--background-color-chargement);
 }
-.container-chargement-photo>img{
+.container-chargement-photo-img{
+    display: inline-flex;
     width: 58px;
     height: 58px;
     margin-top: 22px;
@@ -157,11 +196,26 @@
 .bouton-ajouter-photo{
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: #CBD6DC;
     margin-top: 15px;
     width: 173px;
     height: 36;
     border-radius: 50px;
+    border: none;    
+    color:#306685;
+    font-family: 'Work Sans';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: center;    
+}
+.bouton-ajouter-photo>label{
+    cursor: pointer;
+}
+#chargement-image{
+    display: none;
 }
 .bouton-ajouter-photo>span{
     font-family: 'Work Sans';
@@ -171,7 +225,8 @@
     letter-spacing: 0em;
     color: #306685;
 }
-.container-chargement-photo>p{
+.container-chargement-photo-text{
+    display: inline-flex;
     margin-top: 7px;
     font-family: 'Work Sans';
     font-size: 10px;
@@ -180,6 +235,25 @@
     letter-spacing: 0em;
     text-align: center;
     color: #444444;
+}
+.container-chargement-photo-img-off,
+.bouton-ajouter-photo-off,
+.container-chargement-photo-text-off{
+    /* display: none; */
+    visibility: hidden !important;
+}
+.preview-thumb-no-active{
+    /* display: none !important; */
+    visibility: hidden !important;  
+}
+.preview-thumb-active{
+    /* display: inline-flex; */
+    visibility: visible !important;
+    position: absolute;
+    top: -12px;
+    width: 129px;
+    height: 193px;
+    object-fit: cover;  
 }
 .formulaire-modale-ajout-photo{
     display: flex;
@@ -221,4 +295,7 @@
     line-height: 17px;
     letter-spacing: 0em;
     color: #FFFFFF;
+}
+.bouton-modale-ajout-photo-valided{
+    background-color: var(--pimary-color) !important;
 }
